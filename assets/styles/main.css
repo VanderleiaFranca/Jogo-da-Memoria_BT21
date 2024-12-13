@@ -1,0 +1,109 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("../images/bt21-4kk.png");
+    background-size: 220vh 100vh;
+    user-select: none;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    height: 4em;
+    width: 100%;
+    margin-top: -2em;
+}
+
+h2{
+    font-size: 4.5em;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 3px 2px #33A8DB;
+    letter-spacing: 0.1em;
+}
+
+h3{
+    font-size: 1.5em;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 2px 1px #33A8DB;
+    letter-spacing: 0.1em;
+}
+
+.reset{
+    padding: 10px 15px;
+    width: 76%;
+    color: #ffffff;
+    background: linear-gradient(325deg, #03001e 0%, #7303c0 30%, #ec38bc 70%, #fdeff9 100%);
+    opacity: 0.8;
+    border: none;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.reset:focus{
+    color: #d76fbf;
+    background: #03001e;
+}
+
+.game{
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #fff;
+}
+
+.item img {
+    width: 60%;
+    height: 60%;
+}
+
+.item::after{
+    inset: 0;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    content: "";
+    position: absolute;
+    background: #404040;
+    backface-visibility: hidden;
+}
+
+.item.boxOpen{
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after, .boxMatch::after{
+    transform: rotateY(180deg);
+}
